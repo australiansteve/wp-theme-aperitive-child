@@ -1,0 +1,43 @@
+{
+    "key": "group_5da8c6cfc41aa",
+    "title": "Mailchimp Settings",
+    "fields": [
+        {
+            "key": "field_5da8c6d972cd0",
+            "label": "Mailchimp Signup dialog code snippet",
+            "name": "mailchimp_signup_dialog_code_snippet",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 20,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 30,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1607102789
+}

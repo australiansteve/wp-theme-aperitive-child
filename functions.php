@@ -20,16 +20,13 @@ if( function_exists('acf_add_options_page') ) {
 
 add_action( 'wp_enqueue_scripts', function() {
  
-    $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
- 
+    $parent_style = 'parent-style'; 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
-    );
 
     wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js');
+
+    wp_enqueue_script( 'custom-js', get_stylesheet_directory_uri() . '/js/main.js', array( 'jquery' ));
+
 });
 
 add_action( 'login_enqueue_scripts', function() { 
@@ -65,6 +62,11 @@ function austeveFilterPageTitle( $title, $id = null ) {
 
     if (!in_the_loop())
     {
+    	if (is_front_page())
+    	{
+			$title = get_field('front_page_title', 'option');
+
+    	}
     	if (is_page_template('templates/about-page.php', $id ))
     	{
 			$title = get_field('about_page_title', 'option');

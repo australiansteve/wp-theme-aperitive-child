@@ -35,28 +35,42 @@ get_header();
 					<?php
 					while ( have_rows('profile') ) : the_row();
 
+						$name = get_sub_field('name');
+						$title = get_sub_field('title');
+						$image = get_sub_field('image');
+						$size = 'about-profile';
+						$bio = get_sub_field('biography');
+						$buttonLink = get_sub_field('button_link');;
+						$buttonText = get_sub_field('button_text');
+
 						?>
 						<div class="profile">
 							<div class="name">
-								<h4><?php the_sub_field('name'); ?></h4>
+								<h4><?php echo $name; ?></h4>
 							</div>
 							<div class="title">
-								<h6><?php the_sub_field('title'); ?></h6>
+								<h6><?php echo $title; ?></h6>
 							</div>
 							<div class="columns-2">
 								<div class="image">
 									<?php 
-									$image = get_sub_field('image');
-									$size = 'about-profile'; // (thumbnail, medium, large, full or custom size)
 									if( $image ):
 										echo wp_get_attachment_image( $image, $size );
 									else:
 										echo "&nbsp;";
 									endif;
+
+									if ($buttonText && $buttonLink):
+										?>
+										<div class="button">
+											<a class="button" href="<?php echo $buttonLink;?>" target="blank"><?php echo $buttonText; ?></a>
+										</div>
+										<?php 
+									endif;
 									?>
 								</div>
 								<div class="bio">
-									<?php the_sub_field('biography'); ?>
+									<?php echo $bio; ?>
 								</div>
 							</div>
 

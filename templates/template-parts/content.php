@@ -33,7 +33,7 @@
 		<div class="image">
 			<?php 
 			if ( has_post_thumbnail() ) {
-				the_post_thumbnail('post-archive-featured');
+				the_post_thumbnail('about-profile');
 			} 
 			else {
 				echo "&nbsp;";
