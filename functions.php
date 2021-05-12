@@ -168,4 +168,9 @@ add_action('wp_head', function() {
     <?php
 });
 
+/* Move Yoast metabox below ACF ones */
+add_filter( 'wpseo_metabox_prio', function() {
+    return 'low';
+});
+
 ?>

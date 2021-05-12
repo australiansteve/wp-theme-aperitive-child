@@ -97,8 +97,8 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "visual",
-                    "toolbar": "basic",
+                    "tabs": "all",
+                    "toolbar": "full",
                     "media_upload": 0,
                     "delay": 0
                 },
@@ -160,5 +160,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Add one or more employee profiles to",
-    "modified": 1607110587
+    "modified": 1620828712
 }
